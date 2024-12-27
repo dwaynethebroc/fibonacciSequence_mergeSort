@@ -26,18 +26,14 @@ function fibs(n) {
             fibArray.push(fib3);
         }
 
-        console.log(fibArray);
-
         return fibArray;
     }
 }
 function fibsRecursive(n){
     console.log("this was printed recursively");
      
-    if(n < 2){
-        return [1]; 
-    } else if (n < 3) {
-        return [1, 1];
+    if (n < 3) {
+        return [0, 1];
     }
     else {
         const arr = fibsRecursive(n-1);
@@ -46,8 +42,8 @@ function fibsRecursive(n){
     }
 }
 
-// console.log(fibs(8));
-// console.log(fibsRecursive(7));
+console.log(fibs(8));
+console.log(fibsRecursive(8));
 
 function mergeSort(arr){
     const mid = Math.floor(arr.length / 2);
@@ -58,7 +54,6 @@ function mergeSort(arr){
         return arr;
     } else {
         const result = merge(mergeSort(leftList), (mergeSort(rightList)));
-        console.log(result);
         return result;
     }
 }
@@ -84,5 +79,5 @@ function merge(leftList, rightList){
     return sortedArray.concat(leftUnfinished).concat(rightUnfinished);
 }
 
-mergeSort([3, 2, 1, 13, 8, 5, 0, 1]);
-mergeSort([105, 79, 100, 110]);
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
+console.log(mergeSort([105, 79, 100, 110]));
